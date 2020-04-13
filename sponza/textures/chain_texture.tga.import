@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/chain_texture.tga-463ba5637976a051a847513ef63db512.s3tc.stex"
+path.etc2="res://.import/chain_texture.tga-463ba5637976a051a847513ef63db512.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://sponza/textures/chain_texture.tga"
+dest_files=[ "res://.import/chain_texture.tga-463ba5637976a051a847513ef63db512.s3tc.stex", "res://.import/chain_texture.tga-463ba5637976a051a847513ef63db512.etc2.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=2
+compress/channel_pack=0
+compress/streamed=false
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/invert_color=false
+process/HDR_as_SRGB=false
+process/size_limit=0
+detect_3d/compress_to=0
+svg/scale=1.0

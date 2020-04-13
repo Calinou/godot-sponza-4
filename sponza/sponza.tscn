@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sponza/Sponza.dae" type="PackedScene" id=1]
+
+[sub_resource type="Sky" id=1]
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+sky = SubResource( 1 )
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource( 2 )
+script = null
+
+[node name="Sponza" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform( 0.38996, 0.312647, -0.866131, 0, 0.940597, 0.339526, 0.920832, -0.132402, 0.366796, -8.5959, 5.08104, 0.803221 )
+script = null
