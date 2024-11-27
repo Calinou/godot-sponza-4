@@ -1,20 +1,44 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://vv3ffpj2ru1n"]
 
-[ext_resource path="res://sponza/Sponza.dae" type="PackedScene" id=1]
+[ext_resource type="PackedScene" uid="uid://bk6j1ld3ht8jy" path="res://sponza/Sponza.dae" id="1"]
+[ext_resource type="Script" uid="uid://ds3p54edy2x12" path="res://sponza/fps_label.gd" id="2_mpg6q"]
 
-[sub_resource type="Sky" id=1]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6uyo0"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Environment" id=2]
+[sub_resource type="Sky" id="Sky_c5mm7"]
+sky_material = SubResource("ProceduralSkyMaterial_6uyo0")
+
+[sub_resource type="Environment" id="Environment_vjo0a"]
 background_mode = 2
-sky = SubResource( 1 )
+sky = SubResource("Sky_c5mm7")
+tonemap_mode = 2
 
-[node name="WorldEnvironment" type="WorldEnvironment"]
-environment = SubResource( 2 )
-script = null
+[node name="WorldEnvironment" type="Node3D"]
 
-[node name="Sponza" parent="." instance=ExtResource( 1 )]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.734247, -0.312433, 0.602717, 0.488088, 0.37413, 0.788541, -0.47186, 0.873163, -0.122209, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_fade_start = 1.0
+directional_shadow_max_distance = 30.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vjo0a")
+
+[node name="Sponza" parent="." instance=ExtResource("1")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform( 0.38996, 0.312647, -0.866131, 0, 0.940597, 0.339526, 0.920832, -0.132402, 0.366796, -8.5959, 5.08104, 0.803221 )
-script = null
+transform = Transform3D(-0.179754, -0.227174, -0.957121, 0, 0.97297, -0.230936, 0.983712, -0.0415115, -0.174895, -12.9947, 0.106467, -1.88169)
+current = true
+fov = 65.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 64.0
+offset_bottom = 47.0
+theme_override_constants/outline_size = 5
+script = ExtResource("2_mpg6q")

@@ -6,13 +6,21 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
-
-_global_script_classes=[  ]
-_global_script_class_icons={
-
-}
+config_version=5
 
 [application]
 
 run/main_scene="res://sponza/sponza.tscn"
+config/features=PackedStringArray("4.4")
+
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+global_illumination/sdfgi/probe_ray_count=5
+global_illumination/sdfgi/frames_to_converge=0
